@@ -72,4 +72,4 @@ Os arquivos `.bpmn` foram validados contra o esquema XML da OMG. O HTML permite 
 
 ## Créditos visuais
 
-Identidade visual inspirada nas apresentações da Apple. Símbolo da Apple a partir do Simple Icons. Avatares gerados por IA a partir de referências fornecidas pelos integrantes, inspirados em Memoji; não são Memojis oficiais da Apple.
+Identidade visual inspirada nas apresentações da Apple. Símbolo da Apple a partir do Simple Icons. Avatares e imagens geradas por IA.
