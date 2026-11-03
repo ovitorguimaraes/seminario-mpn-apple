@@ -16,5 +16,5 @@ Os processos são propostas acadêmicas aplicadas ao contexto da Apple. Raias, a
 
 ## Imagens dos slides
 
-- Apple Park: [Apple Newsroom, 22 de fevereiro de 2017](https://www.apple.com/newsroom/2017/02/apple-park-opens-to-employees-in-april/). Foto: Apple.
+- Apple Park ao pôr do sol: foto de Nils Huenerfuerst, junho de 2024. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Apple_Park_aerial_view,_June_2024.jpg), licença CC0 1.0.
 - Personagens dos slides de explicação e agradecimento: ilustrações geradas por IA, inspiradas na estética Memoji. Personagens fictícios, sem vínculo oficial com a Apple.
