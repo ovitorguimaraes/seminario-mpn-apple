@@ -4,6 +4,12 @@ Apresentação acadêmica em HTML para o D1 de Modelagem de Processos de Negóci
 
 ## Abrir a apresentação
 
+**[Abrir os slides no navegador](https://ovitorguimaraes.github.io/seminario-mpn-apple/)**
+
+O site funciona no computador e no celular, sem login.
+
+### Usar offline
+
 1. Baixe `index.html` usando a opção **Download raw file** do GitHub, ou baixe o repositório em **Code → Download ZIP**.
 2. Abra o HTML no Safari, Chrome, Edge ou Firefox.
 3. Pressione **Enter** ou toque no aviso para começar.
