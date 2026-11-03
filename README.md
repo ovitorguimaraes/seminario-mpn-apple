@@ -66,7 +66,7 @@ Os arquivos `.bpmn` foram validados contra o esquema XML da OMG. O HTML permite 
 - Vitor Guimarães
 - Matheus Felipe Costa
 - João Vitor de Paula
-- Eduardo Eugenio Pereira
+- Eduardo Eugênio Pereira
 - Guilherme Marques
 - Jefferson Marlon Maciel Silva
 
