@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="iam_defs" targetNamespace="https://seminario.local/bpmn" exporter="Seminário SI" exporterVersion="1">
+  <bpmn:signal id="iam_change_signal" name="Mudança de função ou desligamento"/>
+  <bpmn:process id="iam_process" name="Gestão de acessos ao desenvolvimento" isExecutable="false">
+    <bpmn:documentation>Proposta acadêmica de processo interno aplicada ao contexto da Apple. Responsáveis, critérios e sistemas são definidos pelo grupo, sem validação da Apple.</bpmn:documentation>
+    <bpmn:laneSet id="iam_lanes">
+      <bpmn:lane id="iam_lane0" name="Solicitante">
+        <bpmn:flowNodeRef>iam_start</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_request</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_complete</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_adjust</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="iam_lane1" name="Gestor">
+        <bpmn:flowNodeRef>iam_manager</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_approve</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_deny</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_denied</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="iam_lane2" name="Segurança da informação">
+        <bpmn:flowNodeRef>iam_policy</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_valid</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="iam_lane3" name="Administração de sistemas">
+        <bpmn:flowNodeRef>iam_grant</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_audit</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_wait</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_timer</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_signal</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_recert</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_keep</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_revoke</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>iam_closed</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="iam_start" name="Necessidade de acesso">
+      <bpmn:outgoing>iam_f1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="iam_request" name="Informar perfil sistema e motivo">
+      <bpmn:incoming>iam_f1</bpmn:incoming>
+      <bpmn:incoming>iam_f4</bpmn:incoming>
+    <bpmn:outgoing>iam_f2</bpmn:outgoing>
+      </bpmn:task>
+    <bpmn:exclusiveGateway id="iam_complete" name="Pedido completo?">
+      <bpmn:incoming>iam_f2</bpmn:incoming>
+      <bpmn:outgoing>iam_f3</bpmn:outgoing>
+      <bpmn:outgoing>iam_f5</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="iam_adjust" name="Complementar solicitação">
+      <bpmn:incoming>iam_f3</bpmn:incoming>
+      <bpmn:outgoing>iam_f4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="iam_manager" name="Avaliar necessidade e vínculo funcional">
+      <bpmn:incoming>iam_f5</bpmn:incoming>
+      <bpmn:outgoing>iam_f6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="iam_approve" name="Gestor aprova?">
+      <bpmn:incoming>iam_f6</bpmn:incoming>
+      <bpmn:outgoing>iam_f7</bpmn:outgoing>
+      <bpmn:outgoing>iam_f9</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="iam_deny" name="Registrar motivo e comunicar recusa">
+      <bpmn:incoming>iam_f7</bpmn:incoming>
+      <bpmn:incoming>iam_f11</bpmn:incoming>
+    <bpmn:outgoing>iam_f8</bpmn:outgoing>
+      </bpmn:task>
+    <bpmn:endEvent id="iam_denied" name="Pedido recusado">
+      <bpmn:incoming>iam_f8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="iam_policy" name="Checar privilégios e conflitos">
+      <bpmn:incoming>iam_f9</bpmn:incoming>
+      <bpmn:outgoing>iam_f10</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="iam_valid" name="Perfil conforme a política?">
+      <bpmn:incoming>iam_f10</bpmn:incoming>
+      <bpmn:outgoing>iam_f11</bpmn:outgoing>
+      <bpmn:outgoing>iam_f12</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="iam_grant" name="Configurar acesso, MFA e validade">
+      <bpmn:incoming>iam_f12</bpmn:incoming>
+      <bpmn:outgoing>iam_f13</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="iam_audit" name="Validar e registrar a concessão">
+      <bpmn:incoming>iam_f13</bpmn:incoming>
+      <bpmn:outgoing>iam_f14</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:eventBasedGateway id="iam_wait" name="Aguardar evento">
+      <bpmn:incoming>iam_f14</bpmn:incoming>
+      <bpmn:incoming>iam_f18</bpmn:incoming>
+      <bpmn:outgoing>iam_f15</bpmn:outgoing>
+      <bpmn:outgoing>iam_f20</bpmn:outgoing>
+    </bpmn:eventBasedGateway>
+    <bpmn:intermediateCatchEvent id="iam_timer" name="Revisão em 90 dias">
+      <bpmn:incoming>iam_f15</bpmn:incoming>
+      <bpmn:outgoing>iam_f16</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="iam_timer_def">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">P90D</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="iam_signal" name="Mudança / saída">
+      <bpmn:incoming>iam_f20</bpmn:incoming>
+      <bpmn:outgoing>iam_f21</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="iam_signal_def" signalRef="iam_change_signal"/>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:task id="iam_recert" name="Reavaliar vínculo e necessidade">
+      <bpmn:incoming>iam_f16</bpmn:incoming>
+      <bpmn:outgoing>iam_f17</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="iam_keep" name="Acesso ainda necessário?">
+      <bpmn:incoming>iam_f17</bpmn:incoming>
+      <bpmn:outgoing>iam_f18</bpmn:outgoing>
+      <bpmn:outgoing>iam_f19</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="iam_revoke" name="Revogar acessos e registrar">
+      <bpmn:incoming>iam_f19</bpmn:incoming>
+      <bpmn:incoming>iam_f21</bpmn:incoming>
+      <bpmn:outgoing>iam_f22</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="iam_closed" name="Acesso encerrado">
+      <bpmn:incoming>iam_f22</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="iam_f1" sourceRef="iam_start" targetRef="iam_request" name=""/>
+    <bpmn:sequenceFlow id="iam_f2" sourceRef="iam_request" targetRef="iam_complete" name=""/>
+    <bpmn:sequenceFlow id="iam_f3" sourceRef="iam_complete" targetRef="iam_adjust" name="Não"/>
+    <bpmn:sequenceFlow id="iam_f4" sourceRef="iam_adjust" targetRef="iam_request" name=""/>
+    <bpmn:sequenceFlow id="iam_f5" sourceRef="iam_complete" targetRef="iam_manager" name="Sim"/>
+    <bpmn:sequenceFlow id="iam_f6" sourceRef="iam_manager" targetRef="iam_approve" name=""/>
+    <bpmn:sequenceFlow id="iam_f7" sourceRef="iam_approve" targetRef="iam_deny" name="Não"/>
+    <bpmn:sequenceFlow id="iam_f8" sourceRef="iam_deny" targetRef="iam_denied" name=""/>
+    <bpmn:sequenceFlow id="iam_f9" sourceRef="iam_approve" targetRef="iam_policy" name="Sim"/>
+    <bpmn:sequenceFlow id="iam_f10" sourceRef="iam_policy" targetRef="iam_valid" name=""/>
+    <bpmn:sequenceFlow id="iam_f11" sourceRef="iam_valid" targetRef="iam_deny" name="Não"/>
+    <bpmn:sequenceFlow id="iam_f12" sourceRef="iam_valid" targetRef="iam_grant" name="Sim"/>
+    <bpmn:sequenceFlow id="iam_f13" sourceRef="iam_grant" targetRef="iam_audit" name=""/>
+    <bpmn:sequenceFlow id="iam_f14" sourceRef="iam_audit" targetRef="iam_wait" name=""/>
+    <bpmn:sequenceFlow id="iam_f15" sourceRef="iam_wait" targetRef="iam_timer" name=""/>
+    <bpmn:sequenceFlow id="iam_f16" sourceRef="iam_timer" targetRef="iam_recert" name=""/>
+    <bpmn:sequenceFlow id="iam_f17" sourceRef="iam_recert" targetRef="iam_keep" name=""/>
+    <bpmn:sequenceFlow id="iam_f18" sourceRef="iam_keep" targetRef="iam_wait" name="Sim: renovar validade"/>
+    <bpmn:sequenceFlow id="iam_f19" sourceRef="iam_keep" targetRef="iam_revoke" name="Não"/>
+    <bpmn:sequenceFlow id="iam_f20" sourceRef="iam_wait" targetRef="iam_signal" name=""/>
+    <bpmn:sequenceFlow id="iam_f21" sourceRef="iam_signal" targetRef="iam_revoke" name=""/>
+    <bpmn:sequenceFlow id="iam_f22" sourceRef="iam_revoke" targetRef="iam_closed" name=""/>
+  </bpmn:process>
+  <bpmn:collaboration id="iam_collab">
+    <bpmn:participant id="iam_pool" name="Gestão de acessos ao desenvolvimento" processRef="iam_process"/>
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="iam_diagram">
+    <bpmndi:BPMNPlane id="iam_plane" bpmnElement="iam_collab">
+      <bpmndi:BPMNShape id="iam_pool_di" bpmnElement="iam_pool" isHorizontal="true">
+        <dc:Bounds x="1" y="25" width="1658" height="840"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_lane0_di" bpmnElement="iam_lane0" isHorizontal="true">
+        <dc:Bounds x="52" y="25" width="1607" height="160"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_lane1_di" bpmnElement="iam_lane1" isHorizontal="true">
+        <dc:Bounds x="52" y="185" width="1607" height="155"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_lane2_di" bpmnElement="iam_lane2" isHorizontal="true">
+        <dc:Bounds x="52" y="340" width="1607" height="160"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_lane3_di" bpmnElement="iam_lane3" isHorizontal="true">
+        <dc:Bounds x="52" y="500" width="1607" height="365"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_start_di" bpmnElement="iam_start">
+        <dc:Bounds x="115" y="101" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="50" y="145" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_request_di" bpmnElement="iam_request">
+        <dc:Bounds x="200" y="87" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_complete_di" bpmnElement="iam_complete">
+        <dc:Bounds x="424" y="93" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="359" y="58" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_adjust_di" bpmnElement="iam_adjust">
+        <dc:Bounds x="550" y="87" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_manager_di" bpmnElement="iam_manager">
+        <dc:Bounds x="550" y="228" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_approve_di" bpmnElement="iam_approve">
+        <dc:Bounds x="774" y="234" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="709" y="199" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_deny_di" bpmnElement="iam_deny">
+        <dc:Bounds x="1000" y="228" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_denied_di" bpmnElement="iam_denied">
+        <dc:Bounds x="1220" y="242" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1155" y="286" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_policy_di" bpmnElement="iam_policy">
+        <dc:Bounds x="740" y="388" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_valid_di" bpmnElement="iam_valid">
+        <dc:Bounds x="974" y="394" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="909" y="359" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_grant_di" bpmnElement="iam_grant">
+        <dc:Bounds x="1100" y="546" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_audit_di" bpmnElement="iam_audit">
+        <dc:Bounds x="1310" y="546" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_wait_di" bpmnElement="iam_wait">
+        <dc:Bounds x="1424" y="699" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1359" y="664" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_timer_di" bpmnElement="iam_timer">
+        <dc:Bounds x="1240" y="707" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1175" y="751" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_signal_di" bpmnElement="iam_signal">
+        <dc:Bounds x="1530" y="791" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1465" y="835" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_recert_di" bpmnElement="iam_recert">
+        <dc:Bounds x="1020" y="693" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_keep_di" bpmnElement="iam_keep">
+        <dc:Bounds x="894" y="699" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="829" y="664" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_revoke_di" bpmnElement="iam_revoke">
+        <dc:Bounds x="700" y="786" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="iam_closed_di" bpmnElement="iam_closed">
+        <dc:Bounds x="565" y="800" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="500" y="844" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="iam_f1_di" bpmnElement="iam_f1">
+        <di:waypoint x="151" y="119"/>
+        <di:waypoint x="200" y="119"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f2_di" bpmnElement="iam_f2">
+        <di:waypoint x="350" y="119"/>
+        <di:waypoint x="424" y="119"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f3_di" bpmnElement="iam_f3">
+        <di:waypoint x="476" y="119"/>
+        <di:waypoint x="550" y="119"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="495" y="94" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f4_di" bpmnElement="iam_f4">
+        <di:waypoint x="625" y="87"/>
+        <di:waypoint x="625" y="57"/>
+        <di:waypoint x="275" y="57"/>
+        <di:waypoint x="275" y="87"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f5_di" bpmnElement="iam_f5">
+        <di:waypoint x="450" y="145"/>
+        <di:waypoint x="450" y="260"/>
+        <di:waypoint x="550" y="260"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="466" y="185" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f6_di" bpmnElement="iam_f6">
+        <di:waypoint x="700" y="260"/>
+        <di:waypoint x="774" y="260"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f7_di" bpmnElement="iam_f7">
+        <di:waypoint x="826" y="260"/>
+        <di:waypoint x="1000" y="260"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="890" y="233" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f8_di" bpmnElement="iam_f8">
+        <di:waypoint x="1150" y="260"/>
+        <di:waypoint x="1220" y="260"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f9_di" bpmnElement="iam_f9">
+        <di:waypoint x="800" y="286"/>
+        <di:waypoint x="800" y="388"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="815" y="311" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f10_di" bpmnElement="iam_f10">
+        <di:waypoint x="890" y="420"/>
+        <di:waypoint x="974" y="420"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f11_di" bpmnElement="iam_f11">
+        <di:waypoint x="1026" y="420"/>
+        <di:waypoint x="1210" y="420"/>
+        <di:waypoint x="1210" y="308"/>
+        <di:waypoint x="1075" y="308"/>
+        <di:waypoint x="1075" y="292"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1100" y="394" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f12_di" bpmnElement="iam_f12">
+        <di:waypoint x="1000" y="446"/>
+        <di:waypoint x="1000" y="578"/>
+        <di:waypoint x="1100" y="578"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1016" y="465" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f13_di" bpmnElement="iam_f13">
+        <di:waypoint x="1250" y="578"/>
+        <di:waypoint x="1310" y="578"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f14_di" bpmnElement="iam_f14">
+        <di:waypoint x="1460" y="578"/>
+        <di:waypoint x="1450" y="578"/>
+        <di:waypoint x="1450" y="699"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f15_di" bpmnElement="iam_f15">
+        <di:waypoint x="1424" y="725"/>
+        <di:waypoint x="1276" y="725"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f16_di" bpmnElement="iam_f16">
+        <di:waypoint x="1240" y="725"/>
+        <di:waypoint x="1170" y="725"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f17_di" bpmnElement="iam_f17">
+        <di:waypoint x="1020" y="725"/>
+        <di:waypoint x="946" y="725"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f18_di" bpmnElement="iam_f18">
+        <di:waypoint x="920" y="699"/>
+        <di:waypoint x="920" y="656"/>
+        <di:waypoint x="1450" y="656"/>
+        <di:waypoint x="1450" y="699"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1090" y="632" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f19_di" bpmnElement="iam_f19">
+        <di:waypoint x="894" y="725"/>
+        <di:waypoint x="775" y="725"/>
+        <di:waypoint x="775" y="786"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="804" y="698" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f20_di" bpmnElement="iam_f20">
+        <di:waypoint x="1476" y="725"/>
+        <di:waypoint x="1548" y="725"/>
+        <di:waypoint x="1548" y="791"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f21_di" bpmnElement="iam_f21">
+        <di:waypoint x="1530" y="809"/>
+        <di:waypoint x="1530" y="847"/>
+        <di:waypoint x="850" y="847"/>
+        <di:waypoint x="850" y="818"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="iam_f22_di" bpmnElement="iam_f22">
+        <di:waypoint x="700" y="818"/>
+        <di:waypoint x="601" y="818"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

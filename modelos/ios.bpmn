@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="ios_defs" targetNamespace="https://seminario.local/bpmn" exporter="Seminário SI" exporterVersion="1">
+  <bpmn:process id="ios_process" name="Atualização e correção do iOS" isExecutable="false">
+    <bpmn:documentation>Proposta acadêmica de processo interno aplicada ao contexto da Apple. Responsáveis, critérios e sistemas são definidos pelo grupo, sem validação da Apple.</bpmn:documentation>
+    <bpmn:laneSet id="ios_lanes">
+      <bpmn:lane id="ios_lane0" name="Produto">
+        <bpmn:flowNodeRef>ios_start</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_triage</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_prior</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="ios_lane1" name="Desenvolvimento">
+        <bpmn:flowNodeRef>ios_dev</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_review</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_fork</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="ios_lane2" name="Qualidade e segurança">
+        <bpmn:flowNodeRef>ios_qa</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_sec</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_join</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_pass</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="ios_lane3" name="Operação de releases">
+        <bpmn:flowNodeRef>ios_release</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_monitor</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_incident</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_stable</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_contain</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_patch</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ios_pending</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="ios_start" name="Demanda registrada">
+      <bpmn:outgoing>ios_f1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="ios_triage" name="Classificar impacto e reproduzir falha">
+      <bpmn:incoming>ios_f1</bpmn:incoming>
+      <bpmn:outgoing>ios_f2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="ios_prior" name="Priorizar escopo e definir aceite">
+      <bpmn:incoming>ios_f2</bpmn:incoming>
+      <bpmn:outgoing>ios_f3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="ios_dev" name="Implementar alterações">
+      <bpmn:incoming>ios_f3</bpmn:incoming>
+      <bpmn:incoming>ios_f11</bpmn:incoming>
+    <bpmn:outgoing>ios_f4</bpmn:outgoing>
+      </bpmn:task>
+    <bpmn:task id="ios_review" name="Revisar código e gerar versão">
+      <bpmn:incoming>ios_f4</bpmn:incoming>
+      <bpmn:outgoing>ios_f5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:parallelGateway id="ios_fork" name="">
+      <bpmn:incoming>ios_f5</bpmn:incoming>
+      <bpmn:outgoing>ios_f6</bpmn:outgoing>
+      <bpmn:outgoing>ios_f7</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:task id="ios_qa" name="Testar funções e regressões">
+      <bpmn:incoming>ios_f6</bpmn:incoming>
+      <bpmn:outgoing>ios_f8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="ios_sec" name="Testar segurança e compatibilidade">
+      <bpmn:incoming>ios_f7</bpmn:incoming>
+      <bpmn:outgoing>ios_f9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:parallelGateway id="ios_join" name="">
+      <bpmn:incoming>ios_f8</bpmn:incoming>
+      <bpmn:incoming>ios_f9</bpmn:incoming>
+      <bpmn:outgoing>ios_f10</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:exclusiveGateway id="ios_pass" name="Critérios atendidos?">
+      <bpmn:incoming>ios_f10</bpmn:incoming>
+      <bpmn:outgoing>ios_f11</bpmn:outgoing>
+      <bpmn:outgoing>ios_f12</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="ios_release" name="Autorizar release assinar e distribuir">
+      <bpmn:incoming>ios_f12</bpmn:incoming>
+      <bpmn:outgoing>ios_f13</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="ios_monitor" name="Monitorar erros e estabilidade">
+      <bpmn:incoming>ios_f13</bpmn:incoming>
+      <bpmn:outgoing>ios_f14</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="ios_incident" name="Incidente crítico no período?">
+      <bpmn:incoming>ios_f14</bpmn:incoming>
+      <bpmn:outgoing>ios_f15</bpmn:outgoing>
+      <bpmn:outgoing>ios_f16</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="ios_stable" name="Release encerrada">
+      <bpmn:incoming>ios_f15</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="ios_contain" name="Conter distribuição e abrir incidente">
+      <bpmn:incoming>ios_f16</bpmn:incoming>
+      <bpmn:outgoing>ios_f17</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="ios_patch" name="Registrar correção em nova demanda">
+      <bpmn:incoming>ios_f17</bpmn:incoming>
+      <bpmn:outgoing>ios_f18</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="ios_pending" name="Nova versão necessária">
+      <bpmn:incoming>ios_f18</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="ios_f1" sourceRef="ios_start" targetRef="ios_triage" name=""/>
+    <bpmn:sequenceFlow id="ios_f2" sourceRef="ios_triage" targetRef="ios_prior" name=""/>
+    <bpmn:sequenceFlow id="ios_f3" sourceRef="ios_prior" targetRef="ios_dev" name=""/>
+    <bpmn:sequenceFlow id="ios_f4" sourceRef="ios_dev" targetRef="ios_review" name=""/>
+    <bpmn:sequenceFlow id="ios_f5" sourceRef="ios_review" targetRef="ios_fork" name=""/>
+    <bpmn:sequenceFlow id="ios_f6" sourceRef="ios_fork" targetRef="ios_qa" name=""/>
+    <bpmn:sequenceFlow id="ios_f7" sourceRef="ios_fork" targetRef="ios_sec" name=""/>
+    <bpmn:sequenceFlow id="ios_f8" sourceRef="ios_qa" targetRef="ios_join" name=""/>
+    <bpmn:sequenceFlow id="ios_f9" sourceRef="ios_sec" targetRef="ios_join" name=""/>
+    <bpmn:sequenceFlow id="ios_f10" sourceRef="ios_join" targetRef="ios_pass" name=""/>
+    <bpmn:sequenceFlow id="ios_f11" sourceRef="ios_pass" targetRef="ios_dev" name="Não: corrigir"/>
+    <bpmn:sequenceFlow id="ios_f12" sourceRef="ios_pass" targetRef="ios_release" name="Sim"/>
+    <bpmn:sequenceFlow id="ios_f13" sourceRef="ios_release" targetRef="ios_monitor" name=""/>
+    <bpmn:sequenceFlow id="ios_f14" sourceRef="ios_monitor" targetRef="ios_incident" name=""/>
+    <bpmn:sequenceFlow id="ios_f15" sourceRef="ios_incident" targetRef="ios_stable" name="Não"/>
+    <bpmn:sequenceFlow id="ios_f16" sourceRef="ios_incident" targetRef="ios_contain" name="Sim"/>
+    <bpmn:sequenceFlow id="ios_f17" sourceRef="ios_contain" targetRef="ios_patch" name=""/>
+    <bpmn:sequenceFlow id="ios_f18" sourceRef="ios_patch" targetRef="ios_pending" name=""/>
+  </bpmn:process>
+  <bpmn:collaboration id="ios_collab">
+    <bpmn:participant id="ios_pool" name="Atualização e correção do iOS" processRef="ios_process"/>
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="ios_diagram">
+    <bpmndi:BPMNPlane id="ios_plane" bpmnElement="ios_collab">
+      <bpmndi:BPMNShape id="ios_pool_di" bpmnElement="ios_pool" isHorizontal="true">
+        <dc:Bounds x="1" y="25" width="1658" height="800"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_lane0_di" bpmnElement="ios_lane0" isHorizontal="true">
+        <dc:Bounds x="52" y="25" width="1607" height="160"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_lane1_di" bpmnElement="ios_lane1" isHorizontal="true">
+        <dc:Bounds x="52" y="185" width="1607" height="160"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_lane2_di" bpmnElement="ios_lane2" isHorizontal="true">
+        <dc:Bounds x="52" y="345" width="1607" height="195"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_lane3_di" bpmnElement="ios_lane3" isHorizontal="true">
+        <dc:Bounds x="52" y="540" width="1607" height="285"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_start_di" bpmnElement="ios_start">
+        <dc:Bounds x="120" y="100" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="55" y="144" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_triage_di" bpmnElement="ios_triage">
+        <dc:Bounds x="200" y="86" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_prior_di" bpmnElement="ios_prior">
+        <dc:Bounds x="400" y="86" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_dev_di" bpmnElement="ios_dev">
+        <dc:Bounds x="400" y="230" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_review_di" bpmnElement="ios_review">
+        <dc:Bounds x="620" y="230" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_fork_di" bpmnElement="ios_fork">
+        <dc:Bounds x="824" y="236" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="759" y="201" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_qa_di" bpmnElement="ios_qa">
+        <dc:Bounds x="950" y="356" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_sec_di" bpmnElement="ios_sec">
+        <dc:Bounds x="950" y="453" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_join_di" bpmnElement="ios_join">
+        <dc:Bounds x="1164" y="394" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1099" y="359" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_pass_di" bpmnElement="ios_pass">
+        <dc:Bounds x="1314" y="394" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1249" y="359" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_release_di" bpmnElement="ios_release">
+        <dc:Bounds x="1260" y="574" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_monitor_di" bpmnElement="ios_monitor">
+        <dc:Bounds x="1050" y="574" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_incident_di" bpmnElement="ios_incident">
+        <dc:Bounds x="904" y="580" width="52" height="52"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="839" y="545" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_stable_di" bpmnElement="ios_stable">
+        <dc:Bounds x="725" y="588" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="660" y="632" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_contain_di" bpmnElement="ios_contain">
+        <dc:Bounds x="850" y="710" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_patch_di" bpmnElement="ios_patch">
+        <dc:Bounds x="620" y="710" width="150" height="64"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ios_pending_di" bpmnElement="ios_pending">
+        <dc:Bounds x="485" y="724" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="420" y="768" width="180" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="ios_f1_di" bpmnElement="ios_f1">
+        <di:waypoint x="156" y="118"/>
+        <di:waypoint x="200" y="118"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f2_di" bpmnElement="ios_f2">
+        <di:waypoint x="350" y="118"/>
+        <di:waypoint x="400" y="118"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f3_di" bpmnElement="ios_f3">
+        <di:waypoint x="475" y="150"/>
+        <di:waypoint x="475" y="230"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f4_di" bpmnElement="ios_f4">
+        <di:waypoint x="550" y="262"/>
+        <di:waypoint x="620" y="262"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f5_di" bpmnElement="ios_f5">
+        <di:waypoint x="770" y="262"/>
+        <di:waypoint x="824" y="262"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f6_di" bpmnElement="ios_f6">
+        <di:waypoint x="876" y="262"/>
+        <di:waypoint x="905" y="262"/>
+        <di:waypoint x="905" y="388"/>
+        <di:waypoint x="950" y="388"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f7_di" bpmnElement="ios_f7">
+        <di:waypoint x="850" y="288"/>
+        <di:waypoint x="850" y="485"/>
+        <di:waypoint x="950" y="485"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f8_di" bpmnElement="ios_f8">
+        <di:waypoint x="1100" y="388"/>
+        <di:waypoint x="1190" y="388"/>
+        <di:waypoint x="1190" y="394"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f9_di" bpmnElement="ios_f9">
+        <di:waypoint x="1100" y="485"/>
+        <di:waypoint x="1190" y="485"/>
+        <di:waypoint x="1190" y="446"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f10_di" bpmnElement="ios_f10">
+        <di:waypoint x="1216" y="420"/>
+        <di:waypoint x="1314" y="420"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f11_di" bpmnElement="ios_f11">
+        <di:waypoint x="1340" y="446"/>
+        <di:waypoint x="1340" y="527"/>
+        <di:waypoint x="475" y="527"/>
+        <di:waypoint x="475" y="294"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="600" y="504" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f12_di" bpmnElement="ios_f12">
+        <di:waypoint x="1366" y="420"/>
+        <di:waypoint x="1530" y="420"/>
+        <di:waypoint x="1530" y="606"/>
+        <di:waypoint x="1410" y="606"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1450" y="396" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f13_di" bpmnElement="ios_f13">
+        <di:waypoint x="1260" y="606"/>
+        <di:waypoint x="1200" y="606"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f14_di" bpmnElement="ios_f14">
+        <di:waypoint x="1050" y="606"/>
+        <di:waypoint x="956" y="606"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f15_di" bpmnElement="ios_f15">
+        <di:waypoint x="904" y="606"/>
+        <di:waypoint x="761" y="606"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="805" y="580" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f16_di" bpmnElement="ios_f16">
+        <di:waypoint x="930" y="632"/>
+        <di:waypoint x="930" y="710"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="945" y="661" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f17_di" bpmnElement="ios_f17">
+        <di:waypoint x="850" y="742"/>
+        <di:waypoint x="770" y="742"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="ios_f18_di" bpmnElement="ios_f18">
+        <di:waypoint x="620" y="742"/>
+        <di:waypoint x="521" y="742"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
