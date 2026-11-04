@@ -22,3 +22,7 @@ One premium Apple Memoji-style 3D fictional Apple retail host isolated on TRUE t
 ## apple-farewell-guide.png
 
 Personagem fictício de despedida em estilo 3D inspirado em Memoji, camiseta azul Apple, mão levantada em saudação, fundo transparente. Criado para o novo encerramento.
+
+## apple-host-holding-qr.png
+
+Edição do personagem original `apple-qr-host.png`, preservando identidade e alterando a pose para segurar uma placa branca. A placa recebe o QR real no HTML, com os dedos sobrepostos às bordas. Cena estática.
