@@ -171,4 +171,29 @@ diagramZoom.addEventListener('input',()=>{const svg=diagramViewport.querySelecto
 :root[data-theme="light"] .closing-redesign h2{color:#1d1d1f;-webkit-text-fill-color:#1d1d1f}:root[data-theme="light"] .closing-redesign .eyebrow{color:#5d718b}:root[data-theme="light"] .farewell-message p{color:#5c6b80}:root[data-theme="light"] .farewell-message .farewell-tagline{color:#263b56}:root[data-theme="light"] .farewell-message .farewell-team{color:#677b95}:root[data-theme="light"] .closing-redesign .project-pass h3{color:#1d2838}:root[data-theme="light"] .closing-redesign .pass-eyebrow{color:#617a99}:root[data-theme="light"] .closing-redesign .pass-instruction{color:#405e82}:root[data-theme="light"] .closing-redesign .pass-repo{color:#36669c}:root[data-theme="light"] .closing-redesign .pass-qr{outline:1px solid #dce4ef;box-shadow:0 10px 40px #2549770a}:root[data-theme="light"] .closing-redesign:before{background:radial-gradient(ellipse at 79% 48%,#76b9ff15,transparent 50%)}:root[data-theme="light"] .farewell-character img{filter:drop-shadow(0 9px 18px #506c9214)}
 :root[data-theme="light"] .diagram-toolbar a,:root[data-theme="light"] .diagram-toolbar button{color:#2466b6}:root[data-theme="light"] .diagram-toolbar span,:root[data-theme="light"] .legend{color:#536d8d}:root[data-theme="light"] .diagram-scroll{border-color:#b8c8db;box-shadow:0 8px 25px #1e3d5e0b}
 @media(max-width:700px){.controls #themeToggle{width:38px;padding:0;border-radius:50%}.controls #themeToggle span{display:none}}
-</style><script id="theme-switcher">(()=>{const button=document.getElementById('themeToggle'),root=document.documentElement;function update(){const light=root.dataset.theme==='light';button.setAttribute('aria-pressed',String(light));button.setAttribute('aria-label',light?'Ativar tema escuro':'Ativar tema claro');button.title=light?'Ativar tema escuro':'Ativar tema claro';button.querySelector('span').textContent=light?'Tema escuro':'Tema claro';}button.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('seminario-apple-theme',root.dataset.theme);}catch{}update();});update();})();</script></body></html>
+</style><script id="theme-switcher">(()=>{const button=document.getElementById('themeToggle'),root=document.documentElement;function update(){const light=root.dataset.theme==='light';button.setAttribute('aria-pressed',String(light));button.setAttribute('aria-label',light?'Ativar tema escuro':'Ativar tema claro');button.title=light?'Ativar tema escuro':'Ativar tema claro';button.querySelector('span').textContent=light?'Tema escuro':'Tema claro';}button.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('seminario-apple-theme',root.dataset.theme);}catch{}update();});update();})();</script><style id="bpmn-light-theme">
+/* Native light palette for both embedded BPMNs and their enlarged copies. */
+:root[data-theme="light"] .diagram-slide .diagram-scroll,:root[data-theme="light"] .diagram-viewport{background:#fff;border-color:#c9d4e1}
+:root[data-theme="light"] .bpmn rect[fill="#080a0e"]{fill:#fff;stroke:#8fa3bd}
+:root[data-theme="light"] .bpmn rect[fill="#10151d"]{fill:#edf2f8;stroke:#c4d0df}
+:root[data-theme="light"] .bpmn rect[fill="#0b1017"]{fill:#f9fbfe;stroke:#c4d0df}
+:root[data-theme="light"] .bpmn path[stroke="#333d4c"]{stroke:#c4d0df}
+:root[data-theme="light"] .bpmn text{fill:#24374f}
+:root[data-theme="light"] .bpmn .lane-name{fill:#3e5c80}
+:root[data-theme="light"] .bpmn .pool-name{fill:#335b89}
+:root[data-theme="light"] .bpmn .task{fill:#fff;stroke:#6f8bae}
+:root[data-theme="light"] .bpmn .gateway{fill:#e1edfb;stroke:#5a7fae}
+:root[data-theme="light"] .bpmn .event{fill:#fff;stroke:#365d89}
+:root[data-theme="light"] .bpmn .flow{stroke:#546d8b}
+:root[data-theme="light"] .bpmn marker path{fill:#546d8b}
+:root[data-theme="light"] .bpmn .edge-label{fill:#275e9f;stroke:#f9fbfe}
+:root[data-theme="light"] .bpmn .event-label,:root[data-theme="light"] .bpmn .gate-label{fill:#24374f;stroke:#f9fbfe}
+:root[data-theme="light"] .bpmn [stroke="#b2c2d8"],:root[data-theme="light"] .bpmn [stroke="#c5d4e8"]{stroke:#365d89}
+:root[data-theme="light"] .diagram-dialog{background:#f5f7fa;color:#24374f;border-color:#aebfd3;box-shadow:0 20px 90px #2a45602a}
+:root[data-theme="light"] .diagram-dialog::backdrop{background:#233b5b45}
+:root[data-theme="light"] .dialog-bar h2{color:#24374f}
+:root[data-theme="light"] .dialog-bar label{color:#536d8b}
+:root[data-theme="light"] .dialog-bar button{background:#fff;color:#365d89;border-color:#c7d4e3}
+:root[data-theme="light"] .dialog-bar button:hover{background:#e5eef9}
+:root[data-theme="light"] .dialog-bar input{accent-color:#286bbb}
+</style></body></html>
