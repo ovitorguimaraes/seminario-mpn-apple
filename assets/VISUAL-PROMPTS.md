@@ -14,3 +14,7 @@ Create a premium Apple Memoji-inspired 3D illustration, genuine transparent back
 
 One premium Apple Memoji-style 3D fictional Apple retail host isolated on TRUE transparent background, waist-up. Friendly adult male, warm light-medium skin, short sculpted brown hair, clean shaven, expressive brown eyes and broad welcoming smile. Wearing a rich cobalt/royal-blue Apple retail T-shirt with a small accurate white Apple silhouette logo centered on the chest. Composition designed for placement LEFT of a separate real QR code: torso angled slightly toward viewer's RIGHT; right arm extends to the RIGHT with an open presenting palm, left hand points toward the same empty area on the RIGHT. Both hands stay close to the body/right edge but do not hold a sign. Gaze toward the right then welcoming expression. Simplified actual Memoji-like soft rubber 3D forms, oversized head, polished professional product lighting. Character is alone, no QR code, no card, no text, no white panel, no backdrop, no border, no floating symbols. Show full head, hair, shoulders, waist and both hands without cropping, generous transparent padding. The live QR code will be implemented separately in HTML to remain perfectly scannable.
 
+
+## Ilustração reservada
+
+`ios-review-guide.png` foi retirada do slide 10 e preservada nesta pasta para uso futuro.
