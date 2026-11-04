@@ -18,4 +18,4 @@ Os processos são propostas acadêmicas aplicadas ao contexto da Apple. Raias, a
 
 - Personagens dos slides de explicação e agradecimento: ilustrações geradas por IA, inspiradas na estética Memoji. Personagens fictícios, sem vínculo oficial com a Apple.
 
-- Aparelhos do slide 3: imagens oficiais [MacBook Air](https://www.apple.com/macbook-air/), [iPad](https://www.apple.com/ipad/) e [iPhone](https://www.apple.com/shop/buy-iphone/iphone-17). Imagens: Apple.
+- Aparelhos do slide 3: imagens oficiais da página [Apple para Empresas — Visão geral](https://www.apple.com/br/business/enterprise/). Imagens: Apple.
