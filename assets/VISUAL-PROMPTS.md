@@ -17,4 +17,4 @@ One premium Apple Memoji-style 3D fictional Apple retail host isolated on TRUE t
 
 ## Ilustração reservada
 
-`ios-review-guide.png` foi retirada do slide 10 e preservada nesta pasta para uso futuro.
+`ios-review-guide.png` está novamente no slide 10, explicando o processo P1.

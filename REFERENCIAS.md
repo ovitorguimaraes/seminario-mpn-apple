@@ -16,7 +16,6 @@ Os processos são propostas acadêmicas aplicadas ao contexto da Apple. Raias, a
 
 ## Imagens dos slides
 
-- Apple Park ao pôr do sol: foto de Nils Huenerfuerst, junho de 2024. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Apple_Park_aerial_view,_June_2024.jpg), licença CC0 1.0.
 - Personagens dos slides de explicação e agradecimento: ilustrações geradas por IA, inspiradas na estética Memoji. Personagens fictícios, sem vínculo oficial com a Apple.
 
-- MacBook, iPad e iPhone do slide 10: imagens oficiais da página [Apple para Empresas — Visão geral](https://www.apple.com/br/business/enterprise/). Imagens: Apple.
+- Aparelhos do slide 3: imagens oficiais [MacBook Air](https://www.apple.com/macbook-air/), [iPad](https://www.apple.com/ipad/) e [iPhone](https://www.apple.com/shop/buy-iphone/iphone-17). Imagens: Apple.
