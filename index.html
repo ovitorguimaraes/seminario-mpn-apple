@@ -436,4 +436,18 @@ html.presentation-fullscreen #presentation{width:100%;height:100%;font-family:-a
 .notes-app .notes-sidebar{padding-bottom:68px}.notes-app .notes-sidebar-footer{bottom:24px}
 @media(max-width:560px){.notes-app .notes-window-heading strong{overflow:hidden;text-overflow:ellipsis}}
 </style>
+
+<style id="notes-continuous-surfaces">
+/* Each column continues through its header without a horizontal seam. */
+.panel.mac-window.notes-app{--notes-toolbar:var(--notes-list);--notes-sidebar-outline:#ffffff2b}
+.notes-app .notes-window-heading{background:var(--notes-list);box-shadow:none}
+.notes-app .notes-document-toolbar{background:var(--notes-document);box-shadow:none}
+.notes-app.sidebar-collapsed .notes-titlebar-left{background:var(--notes-list);box-shadow:none}
+/* Paint the rounded sidebar contour above both the header and scrolling panes. */
+.notes-app:before{border:0}
+.notes-app:after{content:"";position:absolute;z-index:4;left:7px;top:7px;bottom:7px;width:calc(var(--notes-folders-width) - 8px);border:1px solid var(--notes-sidebar-outline);border-radius:22px;background:none;pointer-events:none}
+.notes-app.sidebar-collapsed:after{display:none}
+:root[data-theme="light"] .panel.mac-window.notes-app{--notes-toolbar:var(--notes-list);--notes-sidebar-outline:#00000016}
+@media(max-width:560px){.notes-app:after{display:none}}
+</style>
 </body></html>
