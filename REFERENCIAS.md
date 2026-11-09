@@ -26,4 +26,5 @@ Os processos são propostas acadêmicas aplicadas ao contexto da Apple. Raias, a
 
 - [Relatório anual da Apple, Form 10-K 2026](https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm). Contexto sobre produtos, serviços e pesquisa e desenvolvimento.
 - [Apple · Our Values](https://investor.apple.com/our_values/). Fonte dos valores selecionados no D2.
+- [Apple Platform Security](https://support.apple.com/guide/security/secure-software-updates-secf683e0b36/web) e [NIST SP 800-53 Rev. 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final). Apoio técnico para os exemplos do P1 e do P2.
 - A missão e a visão são formulações do grupo com base nas fontes. As metas, prazos e aplicações aos processos são propostas acadêmicas.

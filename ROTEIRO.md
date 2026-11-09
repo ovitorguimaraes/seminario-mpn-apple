@@ -37,3 +37,5 @@ Encerramento: 09:30–10:00 — referências para consulta, agradecimento e QR c
 4. **Valores.** Use três exemplos. Privacidade orienta a concessão do acesso mínimo. Acessibilidade orienta testes com VoiceOver quando a interface muda. Meio ambiente inspira avaliar se as correções podem manter aparelhos ainda suportados úteis por mais tempo. Os valores vêm da Apple e as aplicações aos processos são propostas do grupo.
 5. **Metas.** Explique como medir durante um piloto de 90 dias. No P1, a Operação busca registrar os dois tipos de aprovação em 100% das liberações. No P2, a Administração de acessos busca retirar 95% das permissões que precisam ser revogadas em até 24 horas após o evento ser registrado. Inclua no denominador os acessos que ainda não foram retirados. Quando não houver casos no período, registre o indicador como não aplicável.
 6. **Fechamento.** Retome a ligação entre estratégia e operação. Missão e visão dão direção, valores orientam escolhas e metas permitem acompanhar o resultado.
+
+7. **Referências e agradecimento.** Mostre as fontes da estratégia e dos exemplos técnicos, depois encerre no slide de agradecimento com o QR code do projeto.

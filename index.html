@@ -182,14 +182,24 @@
   </div>
 </section>
 <section class="slide final-slide strategy-slide" data-day="d2" data-name="D2 · Fechamento" aria-hidden="true">
-  <p class="eyebrow">D2 · Encerramento</p>
-  <h2><span class="blue-flow">Obrigado.</span></h2>
+  <p class="eyebrow">D2 · Síntese</p>
+  <h2><span class="blue-flow">Estratégia</span> na prática</h2>
   <p class="lead">O D1 mostra como o trabalho flui. O D2 explica por que essas decisões fazem sentido e como podemos medir seus resultados.</p>
   <div class="strategy-grid">
     <article><h3>Atualizar com qualidade</h3><p>Verificar a versão antes de liberar e observar o impacto depois.</p></article>
     <article><h3>Proteger o desenvolvimento</h3><p>Conceder o acesso necessário e revisar as permissões ao longo do tempo.</p></article>
   </div>
-  <p class="strategy-source">Fontes: <a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm" target="_blank" rel="noopener">Apple · Form 10-K 2026</a> e <a href="https://investor.apple.com/our_values/" target="_blank" rel="noopener">Apple · Our Values</a>.</p>
+</section>
+<section class="slide final-slide reference-slide" data-day="d2" data-name="D2 · Referências" aria-hidden="true">
+  <p class="eyebrow">D2 · Estratégia e processos de negócio</p>
+  <h2>Referências</h2>
+  <div class="reference-grid">
+    <a class="reference-item" href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm" target="_blank" rel="noopener"><span class="reference-number">01</span><span><strong>Apple · Form 10-K 2026</strong><span class="reference-desc">Produtos, serviços e pesquisa e desenvolvimento</span><span class="reference-domain">sec.gov ↗</span></span></a>
+    <a class="reference-item" href="https://investor.apple.com/our_values/" target="_blank" rel="noopener"><span class="reference-number">02</span><span><strong>Apple · Our Values</strong><span class="reference-desc">Privacidade, acessibilidade e meio ambiente</span><span class="reference-domain">investor.apple.com ↗</span></span></a>
+    <a class="reference-item" href="https://support.apple.com/guide/security/secure-software-updates-secf683e0b36/web" target="_blank" rel="noopener"><span class="reference-number">03</span><span><strong>Apple Platform Security</strong><span class="reference-desc">Contexto para a liberação segura de atualizações no P1</span><span class="reference-domain">support.apple.com ↗</span></span></a>
+    <a class="reference-item" href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final" target="_blank" rel="noopener"><span class="reference-number">04</span><span><strong>NIST SP 800-53 Rev. 5</strong><span class="reference-desc">Gestão de contas e privilégio mínimo no P2</span><span class="reference-domain">csrc.nist.gov ↗</span></span></a>
+  </div>
+  <p class="reference-footnote">A missão e a visão são formulações do grupo. As metas, os prazos e as aplicações aos processos são propostas acadêmicas.</p>
 </section>
 <button id="chooseDay" class="day-jump" type="button" hidden>‹ Escolher apresentação</button>
 <div id="dayTransition" hidden aria-hidden="true"><span></span></div>
@@ -221,8 +231,9 @@ dayTransition.addEventListener('animationend', event => {
   if (event.target === dayTransition) dayTransition.hidden = true;
 });
 const commonSlides = allSlides.slice(0, allSlides.indexOf(dayPicker) + 1);
+const closingSlide = document.querySelector('.thanks-slide');
 const daySlides = {
-  d1: allSlides.slice(commonSlides.length).filter(slide => !slide.dataset.day),
+  d1: allSlides.slice(commonSlides.length).filter(slide => !slide.dataset.day && slide !== closingSlide),
   d2: allSlides.filter(slide => slide.dataset.day === 'd2'),
 };
 let slides = commonSlides;
@@ -264,7 +275,7 @@ function go(index) {
 document.querySelectorAll('[data-select-day]').forEach(button => {
   button.addEventListener('click', () => {
     selectedDay = button.dataset.selectDay;
-    slides = [...commonSlides, ...daySlides[selectedDay]];
+    slides = [...commonSlides, ...daySlides[selectedDay], closingSlide];
     go(commonSlides.length);
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       dayTransitionTitle.textContent = 'Dia ' + selectedDay.slice(1);
