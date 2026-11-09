@@ -4,7 +4,7 @@ Abertura/equipe: 00:00–00:30
 
 Eduardo Eugênio Pereira | 1. Empresa | 00:30–02:00
 
-**Slide 3 · Por trás do software da Apple**
+**Slide 3 · Por trás do universo Apple**
 
 “Esses aparelhos são a parte que a gente vê. Nosso seminário olha para o trabalho por trás do software. Como uma atualização do iOS é preparada? Quem pode acessar os sistemas de desenvolvimento? Essas duas perguntas definem o nosso recorte.”
 
