@@ -21,3 +21,9 @@ Os processos são propostas acadêmicas aplicadas ao contexto da Apple. Raias, a
 - Aparelhos do slide 3: imagens oficiais da página [Apple para Empresas — Visão geral](https://www.apple.com/br/business/enterprise/). Imagens: Apple.
 
 - Rodapé do seminário: [brasão monocromático da PUC Minas](https://www.pucminas.br/Style%20Library/STATIC/img/2025/brasao-pucminas-2025-preenchido.png) e identificação do [campus Betim](https://www.pucminas.br/guia-do-aluno/guia-pratico/Betim/Paginas/default.aspx).
+
+## D2 · Estratégia
+
+- [Relatório anual da Apple, Form 10-K 2026](https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm). Contexto sobre produtos, serviços e pesquisa e desenvolvimento.
+- [Apple · Our Values](https://investor.apple.com/our_values/). Fonte dos valores selecionados no D2.
+- A missão e a visão são formulações do grupo com base nas fontes. As metas, prazos e aplicações aos processos são propostas acadêmicas.

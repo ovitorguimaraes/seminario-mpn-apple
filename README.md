@@ -1,6 +1,6 @@
 # Apple · Processos de Negócio em SI
 
-Apresentação acadêmica em HTML para o D1 de Modelagem de Processos de Negócio, com dois processos internos propostos para o contexto da Apple.
+Apresentação acadêmica em HTML para o D1 e o D2 de Modelagem de Processos de Negócio, com dois processos internos propostos para o contexto da Apple.
 
 ## Abrir a apresentação
 
@@ -18,7 +18,9 @@ O arquivo contém estilos, scripts, avatares, QR code e diagramas incorporados. 
 
 ## Conteúdo
 
-14 slides, com abertura animada e os seis itens do D1:
+Depois da abertura e da equipe, escolha D1 ou D2. O D3 está bloqueado. Durante os slides, **Escolher dia** volta ao seletor.
+
+O D1 cobre seis itens:
 
 1. Empresa e recorte do seminário.
 2. Pesquisa documental.
@@ -28,6 +30,8 @@ O arquivo contém estilos, scripts, avatares, QR code e diagramas incorporados. 
 6. Explicação dos modelos.
 
 O encerramento inclui referências, agradecimento e acesso ao projeto por QR code. O roteiro prevê 10 minutos entre os seis integrantes.
+
+O D2 conecta missão, visão e valores a decisões dos processos do D1 e propõe duas metas mensuráveis para um piloto de 90 dias.
 
 ## Processos modelados
 
