@@ -18,7 +18,7 @@ O arquivo contém estilos, scripts, avatares, QR code e diagramas incorporados. 
 
 ## Conteúdo
 
-Depois da abertura e da equipe, escolha D1 ou D2. O D3 está bloqueado. Durante os slides, **Escolher dia** volta ao seletor.
+Depois da abertura e da equipe, escolha D1 (09/11) ou D2 (16/11). O D3 (23/11), sobre indicadores dos processos, aparece bloqueado. Durante os slides, **Escolher apresentação** volta ao seletor.
 
 O D1 cobre seis itens:
 
