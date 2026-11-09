@@ -19,3 +19,5 @@ Os processos são propostas acadêmicas aplicadas ao contexto da Apple. Raias, a
 - Personagens dos slides de explicação e agradecimento: ilustrações geradas por IA, inspiradas na estética Memoji. Personagens fictícios, sem vínculo oficial com a Apple.
 
 - Aparelhos do slide 3: imagens oficiais da página [Apple para Empresas — Visão geral](https://www.apple.com/br/business/enterprise/). Imagens: Apple.
+
+- Assinatura da PUC Minas no seminário: desenho simplificado do escudo, da estrela e dos montes, inspirado no [brasão oficial da universidade](https://www.pucminas.br/institucional/Paginas/brasao.aspx).
