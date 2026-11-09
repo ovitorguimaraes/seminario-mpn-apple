@@ -18,9 +18,9 @@ O arquivo contém estilos, scripts, avatares, QR code e diagramas incorporados. 
 
 ## Conteúdo
 
-13 slides, com abertura animada e os seis itens do D1:
+14 slides, com abertura animada e os seis itens do D1:
 
-1. Empresa.
+1. Empresa e recorte do seminário.
 2. Pesquisa documental.
 3. Dois processos internos.
 4. Critérios, pessoas e sistemas.
