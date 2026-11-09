@@ -20,4 +20,4 @@ Os processos são propostas acadêmicas aplicadas ao contexto da Apple. Raias, a
 
 - Aparelhos do slide 3: imagens oficiais da página [Apple para Empresas — Visão geral](https://www.apple.com/br/business/enterprise/). Imagens: Apple.
 
-- Assinatura da PUC Minas no seminário: desenho simplificado do escudo, da estrela e dos montes, inspirado no [brasão oficial da universidade](https://www.pucminas.br/institucional/Paginas/brasao.aspx).
+- Rodapé do seminário: [brasão monocromático da PUC Minas](https://www.pucminas.br/Style%20Library/STATIC/img/2025/brasao-pucminas-2025-preenchido.png) e identificação do [campus Betim](https://www.pucminas.br/guia-do-aluno/guia-pratico/Betim/Paginas/default.aspx).
