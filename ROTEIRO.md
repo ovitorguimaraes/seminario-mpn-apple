@@ -31,11 +31,47 @@ Encerramento: 09:30–10:00 — referências para consulta, agradecimento e QR c
 
 ## Roteiro D2 — Estratégia e processos de negócio
 
-1. **Abertura.** Retome os dois processos do D1. Um cuida da qualidade das atualizações do iOS e o outro protege o acesso aos sistemas de desenvolvimento. Pergunte como essas decisões apoiam o que a empresa quer entregar.
-2. **Missão.** Explique o propósito de integrar dispositivos, software e serviços em uma experiência para o usuário. A revisão e os testes ajudam a entregar uma versão que funcione. As permissões dão às equipes acesso ao que precisam para trabalhar. Apresente a missão como uma síntese do grupo.
-3. **Visão.** Aponte a direção de longo prazo que o grupo propõe. A experiência deve evoluir com confiança. No P1, isso envolve acompanhar a versão depois de liberá-la. No P2, envolve manter as permissões alinhadas às responsabilidades de cada pessoa.
-4. **Valores.** Use três exemplos. Privacidade orienta a concessão do acesso mínimo. Acessibilidade orienta testes com VoiceOver quando a interface muda. Meio ambiente inspira avaliar se as correções podem manter aparelhos ainda suportados úteis por mais tempo. Os valores vêm da Apple e as aplicações aos processos são propostas do grupo.
-5. **Metas.** Explique como medir durante um piloto de 90 dias. No P1, a Operação busca registrar os dois tipos de aprovação em 100% das liberações. No P2, a Administração de acessos busca retirar 95% das permissões que precisam ser revogadas em até 24 horas após o evento ser registrado. Inclua no denominador os acessos que ainda não foram retirados. Quando não houver casos no período, registre o indicador como não aplicável.
-6. **Fechamento.** Retome a ligação entre estratégia e operação. Missão e visão dão direção, valores orientam escolhas e metas permitem acompanhar o resultado.
+Previsão de **7 minutos**, com trocas e encerramento incluídos. Limite de **10 minutos**. Os tempos abaixo são cumulativos.
 
-7. **Referências e agradecimento.** Mostre as fontes da estratégia e dos exemplos técnicos, depois encerre no slide de agradecimento com o QR code do projeto.
+| Tempo | Integrante | Slide e assunto |
+| --- | --- | --- |
+| 00:00–00:45 | Eduardo Eugênio Pereira | Abertura — os dois processos do D1 em uma frase cada |
+| 00:45–01:45 | João Vitor de Paula | Missão — qual valor a Apple entrega |
+| 01:45–02:45 | Matheus Felipe Costa | Visão — como evoluir com confiança |
+| 02:45–04:00 | Guilherme Marques | Valores — privacidade, acessibilidade e meio ambiente |
+| 04:00–06:00 | Vitor Guimarães | Metas — o que medir no P1 e no P2 |
+| 06:00–07:00 | Jefferson Marlon Maciel Silva | Síntese, referências e agradecimento |
+
+### Eduardo · Da estratégia ao trabalho do dia a dia
+
+- Aponte para o P1 e o P2. No D1, o grupo modelou a liberação de atualizações do iOS e o controle de acesso aos sistemas de desenvolvimento.
+- Faça a pergunta que abre o D2. Como as prioridades da empresa viram decisões nesses dois processos? Passe para o João sem reapresentar os BPMNs.
+
+### João · O valor que a Apple entrega
+
+- Explique a missão proposta pelo grupo. Dispositivos, software e serviços funcionam juntos para entregar uma experiência integrada. Use um exemplo curto, como uma foto que aparece no iPhone e no Mac por meio do iCloud.
+- Aponte para os dois blocos. Testar as atualizações ajuda a preservar essa experiência, e restringir o acesso ao código protege o trabalho de desenvolvimento. A formulação é uma síntese a partir do relatório anual.
+
+### Matheus · Um ecossistema que evolui com confiança
+
+- Aponte para “evolui com confiança” e explique a direção proposta pelo grupo. A experiência precisa continuar confiável à medida que versões e equipes mudam.
+- No P1, acompanhe a versão depois que ela chega ao usuário para identificar problemas. No P2, use o exemplo de alguém que troca de equipe e precisa ter as permissões antigas revistas.
+
+### Guilherme · Valores na prática
+
+- **Privacidade.** Quem precisa consultar um repositório pode receber leitura, sem permissão para alterar o código.
+- **Acessibilidade.** Se uma atualização muda uma tela, confira se o usuário consegue navegar nela com o VoiceOver.
+- **Meio ambiente.** Avalie se a correção funciona em aparelhos mais antigos que ainda recebem suporte. Isso ajuda a mantê-los úteis por mais tempo.
+- Os três valores são publicados pela Apple. Os exemplos mostram como o grupo os aplicou aos processos modelados.
+
+### Vitor · Da intenção à medição
+
+- **04:00–04:20 · Gancho.** “A gente viu quais valores orientam as decisões. Agora, como saber se essas decisões estão sendo cumpridas?” Aponte para a linha do piloto de **90 dias**.
+- **04:20–05:00 · P1, 100%.** Aponte para o primeiro número. Em cada liberação, a Operação verifica se há registro de aprovação funcional e de segurança. Exemplo de ensaio: se houve 10 liberações e 9 tinham os dois registros, o resultado foi **90%** e ficou abaixo da meta.
+- **05:00–05:45 · P2, 95% em 24 horas.** Aponte para o segundo número. O prazo começa quando a saída ou a mudança de função é registrada. A Administração de acessos divide as permissões revogadas no prazo por todas as que precisavam ser revogadas. Se 19 de 20 foram retiradas no prazo, deu **95%**. A permissão pendente continua na conta.
+- **05:45–06:00 · Passe a palavra.** Diga que os números são metas do piloto acadêmico. “Essas duas medidas mostram onde verificar se o processo está cumprindo o que foi combinado.”
+
+### Jefferson · Síntese, referências e obrigado
+
+- Até **06:40**, faça a síntese em uma ideia: missão e visão dão direção, valores orientam decisões e metas permitem verificar se essas decisões foram cumpridas.
+- Passe pelas referências em uma frase. O relatório e os valores da Apple fundamentam a estratégia, e as referências técnicas apoiam os exemplos. Avance para **Obrigado** e encerre até **07:00**.

@@ -98,7 +98,7 @@
 @media(prefers-reduced-motion:reduce){.intro .fluid-logo,.fluid-orbit,.fluid-counter,.fluid-bloom{animation:none}}
 
 /* Selective blue highlights keep the other lines and diagram titles white. */
-.slide h2 .blue-flow{display:inline-block;background-image:linear-gradient(105deg,#eaf7ff 0%,#b8eaff 17%,#64baff 32%,#245ff4 46%,#91e6ff 59%,#cfeeff 70%,#f3f9ff 84%,#a8d7ff 100%);background-size:280% 100%;background-position:100% 50%;background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.1em;margin-bottom:-.1em;padding-inline-end:.12em;margin-inline-end:-.12em}.slide.active h2 .blue-flow{animation:blue-arrival 4.8s cubic-bezier(.22,.65,.2,1) both,blue-drift 14s ease-in-out 4.8s infinite alternate}
+.slide h2 .blue-flow,#dayTransition .blue-flow{display:inline-block;background-image:linear-gradient(105deg,#eaf7ff 0%,#b8eaff 17%,#64baff 32%,#245ff4 46%,#91e6ff 59%,#cfeeff 70%,#f3f9ff 84%,#a8d7ff 100%);background-size:280% 100%;background-position:100% 50%;background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.1em;margin-bottom:-.1em;padding-inline-end:.12em;margin-inline-end:-.12em}.slide.active h2 .blue-flow{animation:blue-arrival 4.8s cubic-bezier(.22,.65,.2,1) both,blue-drift 14s ease-in-out 4.8s infinite alternate}
 /* The supplied liquid texture lives inside the cover lettering only. */
 .cover #title{background-image:none}.cover.active #title{animation:letter-fluid-explosion 13s cubic-bezier(.45,0,.55,1) infinite alternate;will-change:background-position,background-size}@keyframes letter-fluid-explosion{0%{background-size:260% 450%;background-position:0% 0%}35%{background-size:130% 220%;background-position:70% 35%}70%{background-size:210% 350%;background-position:15% 80%}100%{background-size:155% 260%;background-position:100% 100%}}
 /* Restore the glass logo's moving reflection with a blue finish. */
@@ -133,7 +133,7 @@
 </g>
 <a href="https://github.com/ovitorguimaraes/seminario-mpn-apple" target="_blank" rel="noopener" aria-label="Abrir o projeto no GitHub pelo QR code"><image class="held-qr-code" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAAEJElEQVR4nO1cbWrjQAyVZEN/OtAD9CjODfZIZY/UG9hH6QEW4p8BFy2SZmynrJmxSZpNRu9HmTp62IaHvkZjZNiHnnYSAZyZAiUt1uDMFChpsQZnpkBJizU4MwVKWqzBmSlQ0mINznxGJgbUgEf4QvupR0TosZa1XBui1fHOT7sHtIslcGYms2XBSdcVIx4mg2YUNam4KjXiR37PHaA9pCKZQ/QvvcpnQHFGFeP7J6IqTK3UVf0HT7sdtINjcOZmZnsCUI+E77LqREjHoZZVgpkNcuZTMevvF3qsRoRmrLl/OyNDc0buD4DQflzrnuTMp9RQI8FqAOD+qH9qwPbzhTW9Djk2APDDvic589bMXguuQ4hg+H6qglxaWekfKc4U17rnDtAeksKZt/ZD/O2qBC+LZb2txuiqrnFPcuYzMnut3gdE7ppxyp8rFuWYCwIY6tBH8v5QHqgQJljPR1tD1iRi0ZAIydpFDXOs7aU/pKFNrLrHek9y5o01BC2Pl/8G0YAqp1MhWQcyas01lAQVwoQgmtm/QOgKhd+b0F4MQgpuyzWUASorlnUimqm9qLEsOJ5GNPQPIbmGkqCi6jKE5o+UXyy9IO0xVoz927jsQLYfr6NsgtzzacmZ/29t3x9fOApE9+2/YtE/1CO0nZi8nRHa0+Ex35OcefNY1mgHSMv6sD2vcYutypeVlGRatXksywSVlVMrQmKtZX1Ij0CuWRYUKjT51TWUBSqvLuPgZIKnsdGhS5mFZNs1lAUqMJa16nNi+bXwOYJYprmGskGFMQfJoS0pEp9jM2hgmxtxIDbGt/s/7XbQDo7BmdmzHycR0ly9S4EPLwz9r5NU/iqdL/TZjy2gQpiwjFYaoxZZ0BhTIavQQk7tsSwTVOCeq2CxN2Z59ilsgsxVm2soE1ReTs1WwsdtDmsIddPG6ze4hpKgAmMZTNHKmoq6lz9JKjQfvT+UDSq0Tw3aY5xLfUEYIpo3Y+WiaygJKq3HCHHiw8bP5qmhatKQpkc+P5QNKnH2g+fu9DR+BrHvOI8wGuOx3pOceeP+ELanV2A5WmZX2y4cukdrDTXSJLJDQl81P+J7kjN/IqdWzINoczUGVttPM7Mey/JAhX73A/qDfrNB86GznTnj34dwrgNgkDmjOz/tHtAulsCZW7/7wcwyaqbu5rMWj6TyEeVY6Xb2M4q5oPLqMgjHWac2kElq2odV+Dx1PqhQJnd6JFoC2jHunKlHCt0jXV35nvmgDbaXcObPMVGUE3JqiWD2OSLZstepWDs1feV75oM22F7CmbePZaz50OUBocVJs/DhBt/r2AIqcJ4aYipkmL5+BvNwmtf2G0DlfvejWvzHlwte/PpY70nOTIBSBqtwZgqUtFiDM1OgpMUanJkCJS3W4MwUKGmxBmemsD+n/guseUA5ldjl0QAAAABJRU5ErkJggg==" x="232" y="829" width="560" height="560" preserveAspectRatio="xMidYMid meet"/></a><use href="#holding-host-art" clip-path="url(#holding-hands)" pointer-events="none"/></svg></div></section>
 <section class="slide final-slide strategy-slide" data-day="d2" data-name="D2 · Abertura" aria-hidden="true">
-  <p class="eyebrow">D2 · Estratégia e processos de negócio</p>
+  <p class="eyebrow">D2 · Abertura · Eduardo Eugênio Pereira</p>
   <h2><span class="blue-flow">Da estratégia</span><br>ao trabalho do dia a dia</h2>
   <p class="lead">Como as prioridades da Apple se traduzem em decisões nos processos que modelamos?</p>
   <div class="strategy-grid">
@@ -142,7 +142,7 @@
   </div>
 </section>
 <section class="slide final-slide strategy-slide" data-day="d2" data-name="D2 · Missão" aria-hidden="true">
-  <p class="eyebrow">D2 · 01 / Missão · Por que a empresa existe?</p>
+  <p class="eyebrow">D2 · 01 / Missão · João Vitor de Paula</p>
   <h2>O valor que a <span class="blue-flow">Apple entrega</span></h2>
   <p class="lead">Criar uma experiência integrada para o usuário por meio de dispositivos, software e serviços.</p>
   <div class="strategy-grid">
@@ -152,7 +152,7 @@
   <p class="strategy-source">Síntese do grupo a partir do <a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm" target="_blank" rel="noopener">relatório anual da Apple</a>.</p>
 </section>
 <section class="slide final-slide strategy-slide" data-day="d2" data-name="D2 · Visão" aria-hidden="true">
-  <p class="eyebrow">D2 · 02 / Visão · Que futuro queremos alcançar?</p>
+  <p class="eyebrow">D2 · 02 / Visão · Matheus Felipe Costa</p>
   <h2>Um ecossistema que <span class="blue-flow">evolui com confiança</span></h2>
   <p class="lead">Evoluir a experiência nos produtos e serviços com tecnologia integrada, acessível e confiável.</p>
   <div class="strategy-grid">
@@ -162,7 +162,7 @@
   <p class="strategy-source">Visão proposta pelo grupo com base no <a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm" target="_blank" rel="noopener">relatório anual</a> e nos <a href="https://investor.apple.com/our_values/" target="_blank" rel="noopener">valores publicados pela Apple</a>.</p>
 </section>
 <section class="slide final-slide strategy-slide" data-day="d2" data-name="D2 · Valores" aria-hidden="true">
-  <p class="eyebrow">D2 · 03 / Valores · O que orienta as decisões?</p>
+  <p class="eyebrow">D2 · 03 / Valores · Guilherme Marques</p>
   <h2><span class="blue-flow">Valores</span> na prática</h2>
   <p class="lead">Três valores publicados pela Apple e como eles podem aparecer no nosso recorte.</p>
   <div class="strategy-grid strategy-grid-three">
@@ -173,7 +173,7 @@
   <p class="strategy-source"><a href="https://investor.apple.com/our_values/" target="_blank" rel="noopener">Valores da Apple</a> · Aplicações propostas pelo grupo.</p>
 </section>
 <section class="slide final-slide strategy-slide" data-day="d2" data-name="D2 · Metas" aria-hidden="true">
-  <p class="eyebrow">D2 · 04 / Metas · Como medir o resultado?</p>
+  <p class="eyebrow">D2 · 04 / Metas · Vitor Guimarães</p>
   <h2>Da intenção à <span class="blue-flow">medição</span></h2>
   <p class="lead">Metas propostas para os primeiros 90 dias de um piloto dos dois processos.</p>
   <div class="strategy-grid">
@@ -182,7 +182,7 @@
   </div>
 </section>
 <section class="slide final-slide strategy-slide" data-day="d2" data-name="D2 · Fechamento" aria-hidden="true">
-  <p class="eyebrow">D2 · Síntese</p>
+  <p class="eyebrow">D2 · Síntese · Jefferson Marlon Maciel Silva</p>
   <h2><span class="blue-flow">Estratégia</span> na prática</h2>
   <p class="lead">O D1 mostra como o trabalho flui. O D2 explica por que essas decisões fazem sentido e como podemos medir seus resultados.</p>
   <div class="strategy-grid">
@@ -279,6 +279,7 @@ document.querySelectorAll('[data-select-day]').forEach(button => {
     go(commonSlides.length);
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       dayTransitionTitle.textContent = 'Dia ' + selectedDay.slice(1);
+      dayTransitionTitle.classList.toggle('blue-flow', selectedDay === 'd2');
       dayTransition.hidden = false;
     }
     const heading = slides[current].querySelector('h2');
@@ -394,7 +395,7 @@ diagramZoom.addEventListener('input',()=>{const svg=diagramViewport.querySelecto
 :root{color-scheme:dark;--theme-bg:#000;--theme-text:#f5f5f7}:root[data-theme="light"]{color-scheme:light;--theme-bg:#f5f5f7;--theme-text:#1d1d1f}html,body{background:var(--theme-bg);color:var(--theme-text)}.controls #themeToggle{display:flex;align-items:center;justify-content:center;width:auto;height:38px;border-radius:22px;padding:0 12px;gap:7px;font-size:11px;letter-spacing:0;white-space:nowrap}.controls #themeToggle svg{width:17px;height:17px;flex:none}.theme-moon{display:none}:root[data-theme="light"] .theme-sun{display:none}:root[data-theme="light"] .theme-moon{display:block}
 :root[data-theme="light"] .cover-mark{fill:#273447}:root[data-theme="light"] .subtitle,:root[data-theme="light"] .lead,:root[data-theme="light"] .columns p,:root[data-theme="light"] .method p,:root[data-theme="light"] .research-split p,:root[data-theme="light"] .research-split li,:root[data-theme="light"] .spec-grid p,:root[data-theme="light"] .spec-grid li,:root[data-theme="light"] .process-pair dd,:root[data-theme="light"] .explain-list span,:root[data-theme="light"] .scenario{color:#515966}:root[data-theme="light"] .lead strong,:root[data-theme="light"] .team-member h3,:root[data-theme="light"] .explain-list strong,:root[data-theme="light"] .reference-item strong{color:#1d2838}:root[data-theme="light"] .eyebrow,:root[data-theme="light"] .reference-desc,:root[data-theme="light"] .model-note,:root[data-theme="light"] .reference-footnote,:root[data-theme="light"] .process-pair dt{color:#687284}:root[data-theme="light"] .takeaway,:root[data-theme="light"] .process-id,:root[data-theme="light"] .scenario>span,:root[data-theme="light"] .reference-domain,:root[data-theme="light"] .device-caption{color:#315f94}:root[data-theme="light"] .research-split>div+div,:root[data-theme="light"] .process-pair>article+article,:root[data-theme="light"] .reference-item{border-color:#d4dce6}:root[data-theme="light"] .rule,:root[data-theme="light"] .farewell-rule{background:#b7c8dc}
 /* light-title-vivid-gradient: preserve azure, cyan and royal blue with stronger highlights. */
-:root[data-theme="light"] .slide h2 .blue-flow,:root[data-theme="light"] .cover #title{background-image:linear-gradient(105deg,#3c97e4 0%,#18a3cf 17%,#298fe9 32%,#245ff4 46%,#0da7bc 59%,#459fe9 70%,#5aa8f3 84%,#3a8be3 100%);background-size:230% 100%}
+:root[data-theme="light"] .slide h2 .blue-flow,:root[data-theme="light"] .cover #title,:root[data-theme="light"] #dayTransition .blue-flow{background-image:linear-gradient(105deg,#3c97e4 0%,#18a3cf 17%,#298fe9 32%,#245ff4 46%,#0da7bc 59%,#459fe9 70%,#5aa8f3 84%,#3a8be3 100%);background-size:230% 100%}
 :root[data-theme="light"] .controls button{background:#fff9;border-color:#1c355025;color:#526178}:root[data-theme="light"] .controls button:hover{background:#fff;color:#162337}:root[data-theme="light"] .navigation button,:root[data-theme="light"] .resource-actions button{color:#405675}:root[data-theme="light"] .navigation span,:root[data-theme="light"] .footer,:root[data-theme="light"] .farewell-footer{color:#66788e}:root[data-theme="light"] #startHint{color:#66788e}
 :root[data-theme="light"] .panel{background:#fffffff5;border-color:#c6d1df;box-shadow:0 16px 70px #1e3b5c12;color:#1d1d1f}:root[data-theme="light"] .panel p,:root[data-theme="light"] .panel li{color:#4d5b6e}:root[data-theme="light"] .panel a{color:#1764be}:root[data-theme="light"] .panel button{color:#27364b}:root[data-theme="light"] .panel .small{color:#65778e}
 :root[data-theme="light"] .closing-redesign h2{color:#1d1d1f;-webkit-text-fill-color:#1d1d1f}:root[data-theme="light"] .closing-redesign .eyebrow{color:#5d718b}:root[data-theme="light"] .farewell-message p{color:#5c6b80}:root[data-theme="light"] .farewell-message .farewell-tagline{color:#263b56}:root[data-theme="light"] .farewell-message .farewell-team{color:#677b95}:root[data-theme="light"] .closing-redesign .project-pass h3{color:#1d2838}:root[data-theme="light"] .closing-redesign .pass-eyebrow{color:#617a99}:root[data-theme="light"] .closing-redesign .pass-instruction{color:#405e82}:root[data-theme="light"] .closing-redesign .pass-repo{color:#36669c}:root[data-theme="light"] .closing-redesign .pass-qr{outline:1px solid #dce4ef;box-shadow:0 10px 40px #2549770a}:root[data-theme="light"] .closing-redesign:before{background:radial-gradient(ellipse at 79% 48%,#76b9ff15,transparent 50%)}:root[data-theme="light"] .farewell-character img{filter:drop-shadow(0 9px 18px #506c9214)}
@@ -1016,6 +1017,11 @@ html.presentation-fullscreen #presentation{width:100%;height:100%;font-family:-a
   letter-spacing: -.07em;
   white-space: nowrap;
   animation: day-title-pass 1.3s cubic-bezier(.22,.75,.26,1) both;
+}
+
+#dayTransition .blue-flow {
+  animation: day-title-pass 1.3s cubic-bezier(.22,.75,.26,1) both,
+             blue-arrival 1.3s ease-in-out both;
 }
 
 @keyframes day-transition {
