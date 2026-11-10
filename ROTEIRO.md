@@ -49,7 +49,7 @@ Previsão de **7 minutos**, com trocas e encerramento incluídos. Limite de **10
 
 ### João · O valor que a Apple entrega
 
-- Explique a missão proposta pelo grupo. Dispositivos, software e serviços funcionam juntos para entregar uma experiência integrada. Use um exemplo curto, como uma foto que aparece no iPhone e no Mac por meio do iCloud.
+- Explique a missão proposta pelo grupo. Dispositivos, software e serviços funcionam juntos para entregar uma experiência integrada. Aponte para a imagem: um rascunho começa no iPhone e continua no Mac com o Handoff.
 - Aponte para os dois blocos. Testar as atualizações ajuda a preservar essa experiência, e restringir o acesso ao código protege o trabalho de desenvolvimento. A formulação é uma síntese a partir do relatório anual.
 
 ### Matheus · Um ecossistema que evolui com confiança

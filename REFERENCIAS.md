@@ -28,3 +28,5 @@ Os processos são propostas acadêmicas aplicadas ao contexto da Apple. Raias, a
 - [Apple · Our Values](https://investor.apple.com/our_values/). Fonte dos valores selecionados no D2.
 - [Apple Platform Security](https://support.apple.com/guide/security/secure-software-updates-secf683e0b36/web) e [NIST SP 800-53 Rev. 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final). Apoio técnico para os exemplos do P1 e do P2.
 - A missão e a visão são formulações do grupo com base nas fontes. As metas, prazos e aplicações aos processos são propostas acadêmicas.
+
+- Imagens do D2: atualização programada e ilustração de segurança de [Apple para Empresas](https://www.apple.com/br/business/enterprise/) na abertura e imagem do Handoff de [Continuidade](https://www.apple.com/macos/continuity/) na missão. Imagens: Apple. Os cartões, símbolos e anéis foram desenhados para o seminário.
