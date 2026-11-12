@@ -208,8 +208,8 @@
     </div><div><h3>P1 · Liberações com evidência de testes</h3><p>Ter aprovação funcional e de segurança registrada antes de cada liberação.</p><p class="strategy-source">Medida: liberações com os dois registros ÷ total de liberações. Responsável: Operação.</p></div></article>
     <article class="d2-reveal" style="--goal:95"><div class="d2-ring">
       <svg viewBox="0 0 112 112" aria-hidden="true"><circle class="d2-ring-track" cx="56" cy="56" r="49"/><circle class="d2-ring-fill" cx="56" cy="56" r="49" pathLength="100" stroke-dasharray="95 100"/></svg>
-      <div><span class="strategy-metric blue-flow">95%</span><small aria-hidden="true">Até 24 h</small></div>
-    </div><div><h3>P2 · Revogações em até 24 h</h3><p>Revogar permissões que deixaram de ser necessárias em até 24 horas após o registro de saída ou mudança de função.</p><p class="strategy-source">Medida: revogações no prazo ÷ total de permissões a revogar por esses eventos. Responsável: Administração de acessos.</p></div></article>
+      <div><span class="strategy-metric blue-flow">95%</span><small aria-hidden="true">Até 24&nbsp;h</small></div>
+    </div><div><h3>P2 · Revogações em até 24&nbsp;h</h3><p>Revogar permissões que deixaram de ser necessárias em até 24 horas após o registro de saída ou mudança de função.</p><p class="strategy-source">Medida: revogações no prazo ÷ total de permissões a revogar por esses eventos. Responsável: Administração de acessos.</p></div></article>
   </div>
 </section>
 <section class="slide final-slide strategy-slide" data-day="d2" data-name="D2 · Fechamento" aria-hidden="true">
@@ -1272,6 +1272,11 @@ html.presentation-fullscreen #presentation{width:100%;height:100%;font-family:-a
   color: var(--d2-blue);
 }
 .d2-ring > * { grid-area: 1 / 1; }
+.d2-ring > div {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
 .d2-ring svg { display: block; width: 100%; transform: rotate(-90deg); }
 .d2-ring circle { fill: none; stroke-width: 7; }
 .d2-ring-track { stroke: var(--d2-edge); }
@@ -1294,7 +1299,11 @@ html.presentation-fullscreen #presentation{width:100%;height:100%;font-family:-a
   from { stop-color: var(--ring-light); }
   to { stop-color: var(--ring-dark); }
 }
-.d2-ring .strategy-metric { margin: 0; font-size: clamp(24px, 3.4vw, 47px); }
+.d2-ring .strategy-metric {
+  margin: 0;
+  padding: 0 .04em .04em;
+  font-size: clamp(24px, 3.4vw, 47px);
+}
 .d2-ring small { font-size: clamp(9px, 1vw, 13px); font-weight: 600; }
 .d2-summary {
   display: grid;
