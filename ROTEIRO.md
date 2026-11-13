@@ -35,14 +35,14 @@ Previsão de **7 minutos**, com trocas e encerramento incluídos. Limite de **10
 
 | Tempo | Integrante | Slide e assunto |
 | --- | --- | --- |
-| 00:00–00:45 | Eduardo Eugênio Pereira | Abertura — os dois processos do D1 em uma frase cada |
+| 00:00–00:45 | Vitor Guimarães | Abertura — os dois processos do D1 em uma frase cada |
 | 00:45–01:45 | João Vitor de Paula | Missão — qual valor a Apple entrega |
 | 01:45–02:45 | Matheus Felipe Costa | Visão — como evoluir com confiança |
 | 02:45–04:00 | Guilherme Marques | Valores — privacidade, acessibilidade e meio ambiente |
-| 04:00–06:00 | Vitor Guimarães | Metas — o que medir no P1 e no P2 |
+| 04:00–06:00 | Eduardo Eugênio Pereira | Metas — o que medir no P1 e no P2 |
 | 06:00–07:00 | Jefferson Marlon Maciel Silva | Síntese, referências e agradecimento |
 
-### Eduardo · Da estratégia ao trabalho do dia a dia
+### Vitor · Da estratégia ao dia a dia
 
 - Aponte para o P1 e o P2. No D1, o grupo modelou a liberação de atualizações do iOS e o controle de acesso aos sistemas de desenvolvimento.
 - Faça a pergunta que abre o D2. Como as prioridades da empresa viram decisões nesses dois processos? Passe para o João sem reapresentar os BPMNs.
@@ -64,7 +64,7 @@ Previsão de **7 minutos**, com trocas e encerramento incluídos. Limite de **10
 - **Meio ambiente.** Avalie se a correção funciona em aparelhos mais antigos que ainda recebem suporte. Isso ajuda a mantê-los úteis por mais tempo.
 - Os três valores são publicados pela Apple. Os exemplos mostram como o grupo os aplicou aos processos modelados.
 
-### Vitor · Da intenção à medição
+### Eduardo Eugênio · Da intenção à medição
 
 - **04:00–04:20 · Gancho.** “A gente viu quais valores orientam as decisões. Agora, como saber se essas decisões estão sendo cumpridas?” Aponte para a linha do piloto de **90 dias**.
 - **04:20–05:00 · P1, 100%.** Aponte para o primeiro número. Em cada liberação, a Operação verifica se há registro de aprovação funcional e de segurança. Exemplo de ensaio: se houve 10 liberações e 9 tinham os dois registros, o resultado foi **90%** e ficou abaixo da meta.
